@@ -7,11 +7,24 @@
 </head>
 <body>
     <div id="app">
-
+        <kolor-czcionki kolor ="red"></kolor-czcionki>
     </div>
 <script>
 
+    Vue.component('kolor-czcionki', {
+        template: '<p class = "kolorowa-czcionka" :style="style">dupa</p>',
+        prop: ['kolor'],
+        computed: {
+            style() {
+               return {color: this.kolor};
+            }
+        }
+    });
+    new Vue({
+        el: "#app"
+    });
 
 </script>
+
 </body>
 </html>
