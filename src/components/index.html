@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="http://unpkg/com.vue"></script>
+    <script src="http://unpkg.com/vue"></script>
 </head>
 <body>
     <div id="app">
-        <kolor-czcionki kolor ="red"></kolor-czcionki>
+        <kolor-czcionki kolor ="brown" czcionka="48"></kolor-czcionki>
     </div>
 <script>
-
     Vue.component('kolor-czcionki', {
-        template: '<p class = "kolorowa-czcionka" :style="style">dupa</p>',
-        prop: ['kolor'],
+        template: '<p class = "kolorowa-czcionka" :style="style">moj wazny akapit</p>',
+        props: {
+            kolor: String,
+            czcionka: Number
+        },
         computed: {
             style() {
-               return {color: this.kolor};
+               return {color: this.kolor, fontSize: this.czcionka + 'px'};
             }
         }
     });
