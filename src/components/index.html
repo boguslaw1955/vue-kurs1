@@ -7,23 +7,34 @@
 </head>
 <body>
     <div id="app">
-        <kolor-czcionki kolor ="brown" czcionka="48"></kolor-czcionki>
+
+    <wyswietl-czas :czas="czas" ></wyswietl-czas>
+
     </div>
 <script>
-    Vue.component('kolor-czcionki', {
-        template: '<p class = "kolorowa-czcionka" :style="style">moj wazny akapit</p>',
+
+    Vue.component('wyswietl-czas', {
+        template: '<p>Na stronie znajdujesz już {{czas}} sekund</p>',
         props: {
-            kolor: String,
-            czcionka: Number
-        },
-        computed: {
-            style() {
-               return {color: this.kolor, fontSize: this.czcionka + 'px'};
+            czas: {
+                type: Number,
+                required: true
             }
+
         }
     });
     new Vue({
-        el: "#app"
+        el: "#app",
+        data: {
+            czas: 0
+        },
+
+        created() {
+            setInterval(() => {
+                this.czas ++;
+            }, 1000);
+        }
+
     });
 
 </script>
