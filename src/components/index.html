@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>vue</title>
-
+    <script src="http://unpkg.com/vue"></script>
 </head>
 <body>
-<script src="http://unpkg.com/vue"></script>
+
     <div id="app">
         <wyswietl-czas :czas.sync="sekundy" ></wyswietl-czas>
     </div>
@@ -21,7 +21,7 @@
         },
         mounted() {
            setInterval(() => {
-               this.$emit('update: czas', this.czas + 1);
+               this.czas ++;
            }, 1000) ;
         }
 
