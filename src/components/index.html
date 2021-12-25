@@ -8,28 +8,34 @@
 <body>
 
     <div id="app">
-        <wyswietl-czas :czas.sync="sekundy" ></wyswietl-czas>
+        <p>{{wszystkie}}</p>
+        <button-dodaj v-on: zwieksz="zwiekszWszystkie"></button-dodaj>
+        <button-dodaj v-on: zwieksz="zwiekszWszystkie"></button-dodaj>
     </div>
 <script>
-    Vue.component('wyswietl-czas', {
-        template: '<p>Jestes na stronie {{ czas }} sekund </p>',
-        props: {
-            czas: {
-                type: Number,
-                required: true
+    Vue.component('button-dodaj' , {
+        template: '<button v-on:click= "zwiekszLicznik">{{ licznik}}</button>',
+        data() {
+            return {
+                licznik: 0
             }
         },
-        mounted() {
-           setInterval(() => {
-               this.czas ++;
-           }, 1000) ;
+        methods: {
+            zwiekszLicznik(){
+                this.licznik ++;
+                this.$emit('zwieksz');
+            }
         }
-
-    });
+    })
     new Vue({
         el: "#app",
         data: {
-            sekundy: 0
+            wszystkie: 0
+        },
+        methods: {
+          zwieksWszystkie() {
+              this.wszystkie ++;
+          }
         }
 
     });
