@@ -4,38 +4,29 @@
     <meta charset="UTF-8">
     <title>vue</title>
     <script src="http://unpkg.com/vue"></script>
+    <style>
+        .czcionka {
+            font-size: 48px;
+        }
+        .kolor {
+            color: blue;
+        }
+        .tlo {
+            background-color: red;
+         }
+    </style>
 </head>
 <body>
 
     <div id="app">
-        <p>{{wszystkie}}</p>
-        <button-dodaj v-on:zwieksz="zwiekszWszystkie"></button-dodaj>
-        <button-dodaj v-on:zwieksz="zwiekszWszystkie"></button-dodaj>
+        <p class="czcionka" v-bind:class="{ kolor:czyKolor, tlo:czyTlo}">prosty tekst akapitowy</p>
     </div>
 <script>
-    Vue.component('button-dodaj' , {
-        template: '<button v-on:click= "zwiekszLicznik">{{ licznik}}</button>',
-        data() {
-            return {
-                licznik: 0
-            }
-        },
-        methods: {
-            zwiekszLicznik(){
-                this.licznik ++;
-                this.$emit('zwieksz');
-            }
-        }
-    })
     new Vue({
         el: "#app",
         data: {
-            wszystkie: 0
-        },
-        methods: {
-          zwiekszWszystkie() {
-              this.wszystkie ++;
-          }
+           czyKolor: true,
+           czyTlo: true
         }
 
     });
