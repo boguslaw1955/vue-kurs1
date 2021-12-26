@@ -27,13 +27,14 @@
                      innerHTML: 'jakis tekst'
                  },
                  on: {
-                     click: thisnaszaMetoda
+                     click: this.naszaMetoda
                  },
                  slot: 'przykladowySlot',
                  ref: 'przykladowyRef',
                  class: ['jakasKlasa', {'pogrubiony': true}],
-                 style: {backgroundColor: 'blue'}
-             }
+                 style: {backgroundColor: 'green'}
+             },
+             this.$slots.default
          );
     },
         data: {
