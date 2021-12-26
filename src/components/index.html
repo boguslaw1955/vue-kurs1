@@ -9,8 +9,8 @@
 
     <div id="app">
         <p>{{wszystkie}}</p>
-        <button-dodaj v-on: zwieksz="zwiekszWszystkie"></button-dodaj>
-        <button-dodaj v-on: zwieksz="zwiekszWszystkie"></button-dodaj>
+        <button-dodaj v-on:zwieksz="zwiekszWszystkie"></button-dodaj>
+        <button-dodaj v-on:zwieksz="zwiekszWszystkie"></button-dodaj>
     </div>
 <script>
     Vue.component('button-dodaj' , {
@@ -33,7 +33,7 @@
             wszystkie: 0
         },
         methods: {
-          zwieksWszystkie() {
+          zwiekszWszystkie() {
               this.wszystkie ++;
           }
         }
