@@ -4,30 +4,42 @@
     <meta charset="UTF-8">
     <title>vue</title>
     <script src="http://unpkg.com/vue"></script>
-    <style>
-        .czcionka {
-            font-size: 48px;
-        }
-        .kolor {
-            color: blue;
-        }
-        .tlo {
-            background-color: red;
-         }
-    </style>
 </head>
 <body>
 
     <div id="app">
-        <p class="czcionka" v-bind:class="{ kolor:czyKolor, tlo:czyTlo}">prosty tekst akapitowy</p>
+
     </div>
 <script>
     new Vue({
         el: "#app",
+        render(createElement){
+         return createElement(
+             'button',
+             {
+                 attrs: {
+                     type: 'submit'
+                 },
+                 props: {
+                     foo: 'bar'
+                 },
+                 domProps: {
+                     innerHTML: 'jakis tekst'
+                 },
+                 on: {
+                     click: thisnaszaMetoda
+                 },
+                 slot: 'przykladowySlot',
+                 ref: 'przykladowyRef',
+                 class: ['jakasKlasa', {'pogrubiony': true}],
+                 style: {backgroundColor: 'blue'}
+             }
+         );
+    },
         data: {
-           czyKolor: true,
-           czyTlo: true
+            tag: 'p'
         }
+
 
     });
 
