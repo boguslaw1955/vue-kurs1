@@ -12,36 +12,7 @@
     </div>
 <script>
     new Vue({
-        el: "#app",
-        render(createElement){
-         return createElement(
-             'button',
-             {
-                 attrs: {
-                     type: 'submit'
-                 },
-                 props: {
-                     foo: 'bar'
-                 },
-                 domProps: {
-                     innerHTML: 'jakis tekst'
-                 },
-                 on: {
-                     click: this.naszaMetoda
-                 },
-                 slot: 'przykladowySlot',
-                 ref: 'przykladowyRef',
-                 class: ['jakasKlasa', {'pogrubiony': true}],
-                 style: {backgroundColor: 'green'}
-             },
-             this.$slots.default
-         );
-    },
-        data: {
-            tag: 'p'
-        }
-
-
+        el: "#app"
     });
 
 </script>
