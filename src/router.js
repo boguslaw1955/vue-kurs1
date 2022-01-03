@@ -6,10 +6,10 @@ const Kontakt = {template: '<div>Kontakt</div>'}
 const router = new VueRouter({
     routes: [
         { path: '/', component: Home },
-        { path: 'onas', component: About},
-        { path: '/kontakt' component: Kontakt }
+        { path: '/onas', component: About},
+        { path: '/kontakt', component: Kontakt }
         ]
-})
+});
 
 export default router;
 
